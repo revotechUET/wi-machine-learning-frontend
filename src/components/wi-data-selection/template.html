@@ -1,0 +1,40 @@
+<div class="wrapper"> 
+  <side-bar my-default-width="300" style="border-right: 1px solid #dedede;" class="project-list">
+    <div class="height-40">
+      <div style="position: sticky; position: -webkit-sticky; z-index: 1; top: 0;">
+        <div class="label-list-view">
+          <span>PROJECT LIST</span>
+        </div>
+        <input class="input-search-list-view" type="text" placeholder="Search your project">
+      </div>
+      <wi-base-treeview name="abc" config="" on-click-function="" filter="">
+      </wi-base-treeview>
+    </div>
+    <div class="height-60">
+      <div style="position: sticky; position: -webkit-sticky; z-index: 1; top: 0;">
+        <div class="label-list-view">
+          <span>WELL LIST</span>
+          <span class="label-buttom fa fa-forward" aria-hidden="true"></span>
+          <span class="label-buttom fa fa-minus-circle" aria-hidden="true"></span>
+        </div>
+        <input class="input-search-list-view" type="text" placeholder="Search well this project">
+      </div>
+      <wi-base-treeview name="abc" config="wellList" filter="">
+      </wi-base-treeview>
+    </div>
+  </side-bar>
+  <side-bar my-default-width="500" style="border-right: 1px solid #dedede;" class="well-selected">
+    <div class="menu-left-top">
+      <div style="position: sticky; position: -webkit-sticky; z-index: 1; top: 0;">
+        <div class="label-list-view">
+          <span style="text-transform: uppercase">Wells select</span>
+          <span class="label-buttom fa fa-minus-circle" aria-hidden="true"></span>
+          <span class="label-buttom fa fa-caret-left" aria-hidden="true"></span>
+        </div>
+        <input class="input-search-list-view" type="text" placeholder="Search well displayed">
+      </div>
+          <wi-base-treeview name="abc" config="" on-click-function="" filter="">
+          </wi-base-treeview>
+    </div>
+  </side-bar>
+</div>

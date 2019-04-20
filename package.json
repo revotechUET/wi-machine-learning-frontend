@@ -1,0 +1,41 @@
+{
+  "name": "wipm",
+  "version": "0.0.1",
+  "description": "Frontend for wi machine learning ",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm i && webpack",
+    "dev": "webpack --watch"
+  },
+  "keywords": [
+    "AngularJS"
+  ],
+  "license": "ISC",
+  "author": {
+    "name": "Nguyen Khac Thanh",
+    "email": "nguyenkhacthanh244@gmail.com"
+  },
+  "engines": {
+    "node": ">=8.0",
+    "npm": ">=6.5.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/angular": "^1.6.53",
+    "bower": "^1.8.8",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "~2.2.2",
+    "clean-webpack-plugin": "~1.0.0",
+    "css-loader": "^2.1.1",
+    "eslint": "~5.11.0",
+    "extract-text-webpack-plugin": "~3.0.2",
+    "file-loader": "~3.0.1",
+    "html-loader": "^0.5.5",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "~4.28.2",
+    "webpack-cli": "~3.1.2",
+    "webpack-stream": "~5.2.1"
+  }
+}
