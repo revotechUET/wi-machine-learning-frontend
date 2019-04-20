@@ -20,8 +20,7 @@ angular.module(nameModule,[
     }
 });
 
-function wiMachineLearningController($scope, $http, ngDialog, wiToken,
-  WizardHandler
+function wiMachineLearningController($scope, $http, ngDialog, wiToken
 ) {
   this.$onInit = function() {
   }
