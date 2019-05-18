@@ -34,8 +34,19 @@ function WiDataSelectionController($scope, $http, ngDialog, wiToken,
     self.indexOfChoiceWell = 0
     self.indexOfChoiceSelectedWell = 0
 
-    wiUserProject.getProjectList((listOfProject) => {
-      self.updateViewProjectList(listOfProject)
+    $scope.$watch(() => {
+      return localStorage.getItem("token");
+    }, (newValue, oldvalue) => {
+      let token = localStorage.getItem("token") 
+      if (token !== null) {
+        wiUserProject.setToken(token)
+        wiUserProject.getProjectList((listOfProject) => {
+          self.updateViewProjectList(listOfProject)
+          wiUserProject.getCurveList((curveList) => {
+            console.log(curveList)
+          })
+        })
+      }
     })
   }
 
@@ -120,13 +131,5 @@ function WiDataSelectionController($scope, $http, ngDialog, wiToken,
       toastr.error("Please select project")
       console.error(error)
     }
-  }
-
-  this.onFinish = function() {
-    console.log("Finish!!!");
-  }
-
-  this.onCancel = function() {
-    console.log("Cancel");
   }
 }

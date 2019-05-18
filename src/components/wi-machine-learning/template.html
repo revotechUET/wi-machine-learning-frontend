@@ -8,13 +8,13 @@
     <div class="main-body-center">
       <wizard on-finish="self.onFinish()" on-cancel="self.onCancel()" name="wiMachineLearning"> 
         <wz-step wz-title="Curve selection" style="height: 70vh">
-          <wi-data-selection></wi-data-selection>
+          <h3>Select curve</h3>
         </wz-step>
         <wz-step wz-title="Model parameters" style="height: 70vh">
           <h3>Model parameters</h3>
         </wz-step>
         <wz-step wz-title="Input data" style="height: 70vh">
-          <h3>Input data</h3>
+          <wi-data-selection></wi-data-selection>
         </wz-step>
         <wi-wizard-navigator wz-name="wiMachineLearning"></wi-wizard-navigator>
       </wizard>
