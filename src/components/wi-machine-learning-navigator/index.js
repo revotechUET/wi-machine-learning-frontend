@@ -1,24 +1,19 @@
-const nameModule = "wiWizardNavigator"
-const nameComponent = "wiWizardNavigator"
-const style = require("./style.less")
+const nameComponent = "wiMachineLearningNavigator"
 const template = require("./template.html")
-module.exports.name = nameModule
-module.exports.nameComponent = nameComponent
+require("./style.less")
 
 
-angular.module(nameModule,[
-  "mgo-angular-wizard"
-])
-.component(nameComponent, {
+angular.module("wiMachineLearning")
+  .component(nameComponent, {
     template: template,
-    controller: WiWizardNavigatorController,
+    controller: wiMachineLearningNavigatorController,
     controllerAs: "self",
     bindings: {
       wzName: "@"
     }
-});
+  });
 
-function WiWizardNavigatorController(WizardHandler) {
+function wiMachineLearningNavigatorController(WizardHandler) {
   let self = this
 
   this.$onInit = function() {

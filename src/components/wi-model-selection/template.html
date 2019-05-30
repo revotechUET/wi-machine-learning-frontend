@@ -1,0 +1,23 @@
+<div class="main container-fluid">
+  <div class="col-lg-12 col-md-12" style="display: flex; flex-direction: row; align-items: center;">
+    <label for="modelSelect" style="width: 150px;">Model</label>
+    <select
+      style="width: 200px;"
+      class="form-control"
+      ng-options="model as model.display for model in self.modelDefs track by model.name"
+      ng-model="self.model"
+      id="modelSelect">
+    </select>
+  </div>
+
+  <div class="parameters col-md-12 col-lg-12">
+    <div class="parameter" ng-repeat="parameter in self.model.parameters">
+      <div ng-switch="parameter.type">
+        <wi-number-type ng-switch-when="number" data="parameter"></wi-number-type>
+        <wi-choice-type ng-switch-when="choice" data="parameter"></wi-choice-type>
+        <wi-boolean-type ng-switch-when="boolean" data="parameter"></wi-boolean-type>
+        <wi-array-type ng-switch-when="array" data="parameter"></wi-array-type>
+      </div>
+    </div>
+  <div>
+</div>

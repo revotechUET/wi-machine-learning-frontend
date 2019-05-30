@@ -1,0 +1,15 @@
+<label>{{self.data.display}} <a href="" ng-click="self.addItem()">add</a></label>
+<div style="display: flex; flex-direction: column;">
+  <div class="list-item" style="display: flex; flex-direction: column;">
+    <div
+      style="margin: 0;"
+      ng-repeat="item in self.data.value track by $index"
+    >
+      <input
+        type="number"
+        class="form-control"
+        ng-model="self.data.value[$index]"
+      />
+      <a href="" style="margin-left: 5px;" ng-click="self.remove($index)">remove</a>
+  </div>
+</div>

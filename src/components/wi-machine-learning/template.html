@@ -1,23 +1,16 @@
-<div class="main">
-  <div class="main-toolbar">
-    <wi-login register-url='https://www.i2g.cloud/register-information/'>
-    </wi-login>
-  </div>
-  <div class="main-body">
-    <div class="main-body-left"></div>
-    <div class="main-body-center">
-      <wizard on-finish="self.onFinish()" on-cancel="self.onCancel()" name="wiMachineLearning"> 
-        <wz-step wz-title="Curve selection" style="height: 70vh">
-          <wi-data-selection></wi-data-selection>
-        </wz-step>
-        <wz-step wz-title="Model parameters" style="height: 70vh">
-          <h3>Model parameters</h3>
-        </wz-step>
-        <wz-step wz-title="Input data" style="height: 70vh">
-          <h3>Input data</h3>
-        </wz-step>
-        <wi-wizard-navigator wz-name="wiMachineLearning"></wi-wizard-navigator>
-      </wizard>
-    </div>
+<div class="main-body col-lg-12 col-md-12">
+  <div class="main-body-center">
+    <wizard on-finish="self.onFinish()" on-cancel="self.onCancel()" name="wiMachineLearning"> 
+    <wi-machine-learning-navigator wz-name="wiMachineLearning"></wi-machine-learning-navigator>
+    <wz-step wz-title="CURVE SELECTION" style="height: 70vh">
+      <wi-curves-selection curves="self.input_curves"></wi-curves-selection>
+    </wz-step>
+    <wz-step wz-title="MODEL PARAMETERS" style="height: 70vh">
+      <wi-model-selection id-project="self.idProject"></wi-model-selection>
+    </wz-step>
+    <wz-step wz-title="INPUT DATA" style="height: 70vh">
+      <wi-wells-selection></wi-wells-selection>
+    </wz-step>
+    </wizard>
   </div>
 </div>

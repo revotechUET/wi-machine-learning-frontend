@@ -3,7 +3,7 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin")
 const CleanWebpackPlugin = require("clean-webpack-plugin")
 
 module.exports = {
-  entry: path.resolve(__dirname, "src", "app.module.js"),
+  entry: path.resolve(__dirname, "src", "main.module.js"),
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "wipm.bundle.js"

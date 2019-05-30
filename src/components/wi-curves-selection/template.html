@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="left-panel">
+    <wi-tree-view 
+       tree-root="self.filterTreeRoot" 
+       get-children="self.getFilterChildren"
+       get-label="self.getFilterLabel"
+       get-icon="self.getFilterIcon"
+       run-match="self.filterRunMatch"
+       >
+       <h4>Data type filter</h4>
+       <button ng-click="self.setMode('family')"><span class="family-16x16"></span></button>
+       <button ng-click="self.setMode('curve')"><span class="curve-16x16"></span></button>
+       <button ng-click="self.setMode('familyGroup')"><span class="family-group-16x16"></span></button>
+    </wi-tree-view>
+  </div>
+
+  <div class="right-panel">
+    <h4>Input selection</h4>
+    <div style="flex: 1; border: 1px solid #ccc;">
+      <h5>Input curves</h5>
+      <wi-droppable on-drop="self.onInputDrop" container-style="{
+      width: '100%',
+      height: '100%',
+      overflow: 'auto'
+      }">
+        <wi-curve-node ng-repeat="item in self.inputs" data="item" on-delete="self.deleteInputNode"></wi-curve-node>
+      </wi-droppable>
+    </div>
+    <div style="flex-basis: 50px; border: 1px solid #ccc;">
+      <h5>Target curve</h5>
+      <wi-droppable on-drop="self.onTargetDrop" container-style="{
+      width: '100%',
+      height: '50px',
+      overflow: 'auto'
+      }">
+        <wi-curve-node ng-if="self.target" data="self.target" ng-click="self.target=null"></wi-curve-node>
+      </wi-droppable>
+    </div>
+    <div style="border: 1px solid #ccc;">
+      <wi-ml-settings></wi-ml-settings>
+    </div>
+  </div>
+</div>

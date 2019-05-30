@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="title">
+    <span class="curve-16x16"></span>
+    <span ng-bind="self.data.name"></span>
+  </div>
+  <div class="transform">
+    <button
+      ng-class="{'active':self.data.transform=='linear'}"
+      ng-click="self.data.transform='linear'">x
+    </button>
+    <button
+      ng-class="{'active':self.data.transform=='log'}"
+      ng-click="self.data.transform='log'">log
+    </button>
+    <button
+      ng-class="{'active':self.data.transform=='exp'}"
+      ng-click="self.data.transform='exp'">exp
+    </button>
+  </div>
+  <button class="del" ng-click="self.onDelete(self.data)">X</button>
+</div>

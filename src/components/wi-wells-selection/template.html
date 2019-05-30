@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="left-panel">
+    <h4>Wells</h4>
+    <div style="flex: 1; border: 1px solid #ccc;">
+      <wi-tree-view 
+         tree-root="self.filterTreeRoot" 
+         get-children="self.getFilterChildren"
+         get-label="self.getFilterLabel"
+         get-icon="self.getFilterIcon"
+         run-match="self.filterRunMatch"
+         >
+      </wi-tree-view>
+    </div>
+  </div>
+  <div class="right-panel">
+    <h4>Well selection</h4>
+    <div style="flex: 1; border: 1px solid #ccc;">
+      <wi-droppable on-drop="self.onDrop" container-style="{
+      width: '100%',
+      height: '100%',
+      overflow: 'auto'
+      }">
+        <wi-tree-view
+          tree-root="self.wellTreeRoot"
+          get-children="self.getWellChildren"
+          get-label="self.getWellLabel"
+          get-icon="self.getWellIcon"
+          run-match="self.wellRunMatch">
+        </wi-tree-view>
+      </wi-droppable>
+    </div>
+  </div>
+</div>

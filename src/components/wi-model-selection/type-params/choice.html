@@ -1,0 +1,7 @@
+<label ng-bind="self.data.display"></label>
+<select
+  class="form-control"
+  ng-options="item as item.display for item in self.data.items track by item.value"
+  ng-model="self.data.value"  
+>
+</select>

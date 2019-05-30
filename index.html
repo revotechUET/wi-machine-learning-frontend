@@ -18,17 +18,38 @@
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/ng-dialog/js/ngDialog.min.js"></script>
   <script src="bower_components/angular-wizard/dist/angular-wizard.min.js"></script>
+  <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
 
   <script src="bower_components/misc-component/dist/misc-components.js"></script>
   <script src="dist/wipm.bundle.js"></script>
 </head>
 
 <body ng-app="wipm" style="font-size: 12px;">
-    <div style="width: 100vw; height: 100vh; min-width: 100vw; min-height: 100vh;">
-        <wi-machine-learning></wi-machine-learning>
+  <div class="container-fluid" style="padding-left: 0; padding-right: 0;" ng-controller="demo">
+    <div class="main-toolbar col-lg-12 col-md-12">
+      <wi-login register-url='https://www.i2g.cloud/register-information/'>
+      </wi-login>
     </div>
+    <div class="col-lg-12 col-md-12">
+      <!-- <select
+        ng-options="item as item.name for item in projects track by item.idProject"
+        ng-model="project"
+        ng-change="setProject()"
+        >    
+      </select> -->
+    </div>
+    <div class="col-lg-12 col-md-12" style="width: 100vw; height: 100vh; min-width: 100vw; min-height: 100vh;">
+        <wi-machine-learning id-project="4"></wi-machine-learning>
+    </div>
+  </div>
   <script>
-    angular.module( "wipm", ["wiMachineLearning"]);
+    const app = angular.module( "wipm", ["ngDialog", "wiMachineLearning", "wiLogin", "wiApi"]);
+    app.controller("demo", async function($scope, wiApi ) {
+      projects = await wiApi.getProjectsPromise()
+      $scope.projects = projects
+      $scope.project = projects[0]
+
+    })
   </script>
 </body>
 </html>

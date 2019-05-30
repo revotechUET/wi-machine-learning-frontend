@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label ng-bind="self.data.display"></label>
+  <input
+    type="number"
+    min="{{self.data.min}}"  
+    max="{{self.data.max}}"
+    step="{{self.data.step}}"
+    class="form-control"
+    ng-model="self.data.value" 
+    />
+</div>
